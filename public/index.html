@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    </head>
+
+    <body>
+        <label for="deckcode">Deckcode:</label>
+        <input type="text" id="deckcode" name="deckcode" minlength="4" maxlength="4">
+        <input type="button" id="confirm" value="Get Deck">
+
+        <div id="decklist"></div>
+
+        <template id="tooltip">
+            <div class="bl-tooltip clearfix">
+                <div class="l-left bl-tooltip-container">
+                    <div class="bl-tooltip-image-wrapper">
+                        <div class="bl-tooltip-image">
+                            <img class="" data-card-src="" src="" alt="" />
+                            <div class="bl-tooltip-cardname" id="tooltipCardname">
+                                <img data-card-name-src="" src="" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="l-right bl-tooltip-container">
+                    <div class="bl-tooltip-header">
+                        <p class="bl-tooltip-card-name" data-card-name=""></p>
+                        <p class="bl-tooltip-card-tribe-name"><span class="bl-tooltip-card-tribe-name-label">Trait: </span><span data-card-tribe-name=""></span></p>
+                    </div>
+                    <div class="bl-tooltip-card-detail">
+                        <div class="clearfix follower-stats">
+                            <i class="el-label-card-state is-small l-left">Unevolved</i>
+                            <p class="bl-tooltip-card-status l-right">
+                                <span class="el-card-status is-atk is-small" data-card-atk="">0</span>
+                                <span class="el-card-status is-life is-small" data-card-life="">0</span>
+                            </p>
+                        </div>
+                        <div class="bl-tooltip-card-description">
+                            <p class="bl-tooltip-card-text" data-card-skill-disc="">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bl-tooltip-card-detail follower-stats">
+                        <div class="clearfix">
+                            <i class="el-label-card-state is-small l-left">Evolved</i>
+                            <p class="bl-tooltip-card-status l-right">
+                                <span class="el-card-status is-atk is-small" data-card-evo-atk="">0</span>
+                                <span class="el-card-status is-life is-small" data-card-evo-life="">0</span>
+                            </p>
+                        </div>
+                        <div class="bl-tooltip-card-description">
+                            <p class="bl-tooltip-card-text" data-card-evo-skill-disc="">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </body>
+
+</html>

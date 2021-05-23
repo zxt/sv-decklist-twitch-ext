@@ -1,0 +1,517 @@
+.el-card-list-info-name .el-card-list-info-name-text{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+}
+
+.el-card-list,.el-card-list-image{
+    transition: all .35s ease 0s;
+    -webkit-transition:all .35s ease 0s;
+    -o-transition:all .35s ease 0s;
+}
+
+.el-card-list{
+    position:relative;
+    visibility:visible;
+    width:270px;
+    height:46px;
+    margin-top:2px;
+    cursor:pointer;
+    opacity:1;
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/loading.gif);
+    background-repeat:no-repeat;
+    background-position:center;
+    -webkit-background-size:30px 30px;
+    background-size:30px;
+}
+
+.el-card-list-image{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:1;
+    z-index:10;
+}
+
+.el-card-list.is-static{
+    cursor:default;
+}
+
+.el-card-list-info,.el-card-list-rarity{
+    position:absolute;
+    z-index:100;
+}
+
+.el-card-list-cost{
+    display:table-cell;
+    width:56px;
+    padding-top:5px;
+    text-align:center;
+    vertical-align:top;
+}
+
+.el-card-list-rarity{
+    bottom:3px;
+    left:1px;
+}
+
+.el-card-list-rarity>i{
+    display:block;
+    width:50px;
+    height:16px;
+}
+
+.en .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/en/rarity_bronze.png)
+}
+.en .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/en/rarity_silver.png)
+}
+.en .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/en/rarity_gold.png)
+}
+.en .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/en/rarity_legend.png)
+}
+
+.el-card-list-info{
+    top:0;
+    left:0;
+    display:table;
+    width:255px;
+    height:46px;
+}
+
+.el-card-list-info-name{
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.el-card-list-info-name .el-card-list-info-name-text{
+    font-size:11px;
+    font-weight:700;
+    display:block;
+    overflow:hidden;
+    width:120px;
+    padding:0 5px;
+    text-align:left;
+}
+
+.el-card-list-info-count{
+    font-size:13px;
+    display:table-cell;
+    min-width:37px;
+    padding:0 5px;
+    text-align:right;
+    vertical-align:middle;
+    letter-spacing:1px;
+}
+
+.el-card-list-link{
+    display:table-cell;
+    padding:0 6px 0 0;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.icon-cost{
+    width:30px;
+    height:30px;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    text-indent:-999em;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+
+.icon-cost,.icon-search{
+    background-size: 100%;
+    -webkit-background-size:100% 100%;
+}
+
+.icon-cost,.icon-search{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+    background-repeat:no-repeat;
+}
+
+.el-icon-search{
+    line-height:33px;
+    display:inline-block;
+    width:36px;
+    height:36px;
+    -webkit-transition:background-color .25s ease 0s;
+    -o-transition:background-color .25s ease 0s;
+    transition:background-color .25s ease 0s;
+    text-align:center;
+    border-radius:50px;
+    outline:0;
+    background-color:#2b2b2b;
+}
+.el-icon-search.is-small{
+    line-height:22px;
+    width:26px;
+    height:26px;
+}
+
+.el-icon-search:hover{
+    background-color:#272727;
+}
+.icon-search{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/icon_search.png);
+    background-position:center center;
+    background-size:100%;
+}
+
+.icon-search.is-small{
+    width:14px;
+    height:14px;
+}
+
+.icon-cost.is-small{
+    width:22px;
+    height:22px;
+}
+
+.icon-cost.is-cost-0{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_0.png);
+}
+.icon-cost.is-cost-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_1.png);
+}
+.icon-cost.is-cost-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_2.png);
+}
+.icon-cost.is-cost-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_3.png);
+}
+.icon-cost.is-cost-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_4.png);
+}
+.icon-cost.is-cost-5{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_5.png);
+}
+.icon-cost.is-cost-6{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_6.png);
+}
+.icon-cost.is-cost-7{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_7.png);
+}
+.icon-cost.is-cost-8{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_8.png);
+}
+.icon-cost.is-cost-9{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_9.png);
+}
+.icon-cost.is-cost-10{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_10.png);
+}
+.icon-cost.is-cost-11{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_11.png);
+}
+.icon-cost.is-cost-12{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_12.png);
+}
+.icon-cost.is-cost-13{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_13.png);
+}
+.icon-cost.is-cost-14{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_14.png);
+}
+.icon-cost.is-cost-15{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_15.png);
+}
+.icon-cost.is-cost-16{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_16.png);
+}
+.icon-cost.is-cost-17{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_17.png);
+}
+.icon-cost.is-cost-18{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_18.png);
+}
+.icon-cost.is-cost-19{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_19.png);
+}
+.icon-cost.is-cost-20{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_20.png);
+}
+.icon-cost.is-cost-10.is-plus{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/cost_10_plus.png);
+}
+
+.clearfix{
+    zoom:1;
+}
+.clearfix:after,.clearfix:before{
+    display:table;
+    content:'';
+}
+
+.clearfix::after {
+    clear:both;
+}
+
+.l-left{
+    float:left!important;
+}
+
+.l-right{
+    float:right!important;
+}
+
+.is-hidden{
+    display:none!important;
+}
+
+/******************/
+
+body,li,p,ul{
+    margin:0;
+}
+
+img{
+    border:0;
+}
+
+li,ul{
+    padding:0;
+}
+
+html{
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%;
+    height: 1200px;
+}
+
+a{
+    background-color:transparent;
+    color:inherit;
+}
+a:active,a:hover{
+    outline:0;
+}
+
+img{
+    max-width:100%;
+    vertical-align:middle;
+}
+
+*{
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-font-smoothing:antialiased;
+}
+
+body,html{
+    font-family:sans-serif;
+    color:#fff;
+    background-color:#000;
+}
+
+body.en{
+    font-family:Verdana, Geneva, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+li,ul{
+    list-style:none;
+}
+a:hover{
+    text-decoration:none;
+}
+
+/******************/
+
+.bl-tooltip {
+    position:fixed;
+    z-index:10000;    
+    width:474px;
+    min-height:308px;
+    padding:18px;
+    transition:opacity .25s ease 0s;
+    -o-transition:opacity .25s ease 0s;
+    -webkit-transition:opacity .25s ease 0s;
+    -webkit-transform:translateZ(0);
+    transform:translateZ(0);
+    -webkit-box-shadow:0 0 2px 3px rgba(113,200,239,.45);
+    box-shadow:0 0 2px 3px rgba(113,200,239,.45);
+    background-color:#000;
+}
+
+.bl-tooltip-container{
+    display:block;
+    width:50%;
+}
+
+.bl-tooltip-image-wrapper {
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/loading.gif);
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.bl-tooltip-image{
+    width:204px;
+    height:272px;
+    -webkit-transition:opacity .25s ease 0s;
+    -o-transition:opacity .25s ease 0s;
+    transition:opacity .25s ease 0s;
+    opacity:1;
+}
+
+.bl-tooltip-cardname img{
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    margin:0 auto;
+    transform: translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    max-height:100%;
+}
+
+.bl-tooltip-cardname{
+    position:absolute;
+    z-index:1000;
+    top:47px;
+    left:66px;
+    width:126px;
+    height:17px;
+}
+
+.bl-tooltip-header{
+    line-height:1.25;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(255,255,255,.2)
+}
+
+.bl-tooltip-header .bl-tooltip-card-name{
+    font-size:16px;
+    margin-bottom:30px;
+    text-align:left;
+}
+
+.bl-tooltip-header .bl-tooltip-card-tribe-name{
+    font-size:11px;
+    color:#fff;
+}
+
+.bl-tooltip-header .bl-tooltip-card-tribe-name .bl-tooltip-card-tribe-name-label{
+    font-size:10px;
+    color:#01b1da;
+}
+
+.bl-tooltip-card-detail{
+    margin-top:10px;
+}
+.bl-tooltip-card-detail .el-label-card-state{
+    margin-top:4px;
+}
+.bl-tooltip-card-detail .bl-tooltip-card-status{
+    display:inline-block;
+    width:50%;
+    text-align:right;
+}
+.bl-tooltip-card-detail .bl-tooltip-card-description{
+    margin-top:5px;
+}
+.bl-tooltip-card-detail .bl-tooltip-card-text{
+    font-size:10px;
+    line-height:1.5;
+}
+.bl-tooltip-card-detail+.bl-tooltip-card-detail{
+    margin-top:30px;
+}
+
+.bl-tooltip-card-detail .el-label-card-state{
+    margin-top:4px;
+}
+
+.el-label-card-state{
+    display:inline-block;
+    vertical-align:middle;
+    font-size:13px;
+    font-style:normal;
+    line-height:29px;
+    position:relative;
+    height:29px;
+    margin:0 11px;
+    padding:0 5px;
+    text-align:center;
+    color:#01b1da;
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/label_frame_middle.png);
+    background-repeat:repeat-x;
+    background-position:center;
+    -webkit-background-size:auto 100%;
+    background-size:auto 100%;
+}
+
+.el-label-card-state:after,.el-label-card-state:before{
+    position:absolute;
+    top:0;
+    width:11px;
+    height:100%;
+    content:'';
+    -webkit-background-size:auto 100%;
+    background-size:auto 100%;
+}
+.el-label-card-state:before{
+    left:-11px;
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/label_frame_left.png);
+}
+.el-label-card-state:after{
+    right:-11px;
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/label_frame_right.png);
+}
+.el-label-card-state.is-small{
+    font-size:10px;
+    line-height:20px;
+    max-width:100px;
+    height:20px;
+    margin:0 7px;
+    word-break:break-all;
+}
+.el-label-card-state.is-small:after,.el-label-card-state.is-small:before{
+    width:7px;
+}
+.el-label-card-state.is-small:before{
+    left:-7px;
+}
+.el-label-card-state.is-small:after{
+    right:-7px;
+}
+
+.el-card-status{
+    font-size:15px;
+    line-height:26px;
+    display:inline-block;
+    width:26px;
+    height:26px;
+    text-align:center;
+    vertical-align:middle;
+    text-decoration:none;
+    border-width:1px;
+    border-style:solid;
+    border-radius:50%;
+}
+.el-card-status.is-atk{
+    border-color:#004eff;
+    background-color:#064d8f;
+}
+.el-card-status.is-life{
+    border-color:#b20000;
+    background-color:#870714;
+    margin-left:12px;
+}
+.el-card-status.is-small{
+    font-size:12px;
+    line-height:19px;
+    width:20px;
+    height:20px;
+}
+.el-card-status.is-life.is-small{
+    margin-left:7px;
+}
+

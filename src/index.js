@@ -1,5 +1,5 @@
 import {addClass} from "./utils.js";
-import tippy, {delegate} from "tippy.js";
+import {delegate} from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import "./styles.css";
 
@@ -170,15 +170,38 @@ function processDecklist(data) {
     setupTooltips();
 }
 
-function getDecklist() {
+const CORS_PROXY_URL = "https://secure-brook-72787.herokuapp.com/";
+
+function getDeckhash(deckcode) {
+    const SVPORTAL_DECKCODE_URL = "shadowverse-portal.com/api/v1/deck/import?format=json&deck_code=";
+
+    let deckhash = fetch(CORS_PROXY_URL + SVPORTAL_DECKCODE_URL + deckcode)
+    .then(response => response.json())
+    .then(jsonData => jsonData.data.hash)
+
+    return deckhash;
+
+}
+
+function getDecklist(hash) {
+    const SVPORTAL_DECKHASH_URL = "shadowverse-portal.com/api/v1/deck?format=json&hash=";
+
+    let decklist = fetch(CORS_PROXY_URL + SVPORTAL_DECKHASH_URL + hash)
+    .then(response => response.json())
+    .then(jsonData => jsonData.data)
+
+    return decklist;
+}
+
+function main() {
     const deckcode = document.getElementById("deckcode").value;
 
-    fetch("./test.json")
-    .then(response => response.json())
-    .then(jsonData => processDecklist(jsonData.data));
+    getDeckhash(deckcode)
+    .then(hash => getDecklist(hash))
+    .then(decklist => processDecklist(decklist));
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
     const el = document.getElementById("confirm");
-    el.addEventListener("click", getDecklist, false);
+    el.addEventListener("click", main, false);
 })

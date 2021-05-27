@@ -8,7 +8,7 @@ function configMain() {
 
     getDeckhash(deckcode)
     .then(hash => getDecklist(hash))
-    .then(decklist => processDecklist(decklist));
+    .then(decklist => processDecklist(decklist, false));
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {

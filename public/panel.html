@@ -2,14 +2,11 @@
 <html>
 
     <head>
+        <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
         <title><%= htmlWebpackPlugin.options.title %></title>
     </head>
 
     <body>
-        <label for="deckcode">Deckcode:</label>
-        <input type="text" id="deckcode" name="deckcode" minlength="4" maxlength="4">
-        <input type="button" id="confirm" value="Get Deck">
-
         <div id="decklist"></div>
 
         <template id="tooltip">
@@ -58,6 +55,7 @@
                 </div>
             </div>
         </template>
+        
     </body>
 
 </html>

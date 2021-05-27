@@ -4,6 +4,11 @@ import {processDecklist} from "./decklist.js";
 import "./styles.css";
 
 function configMain() {
+    const template = document.getElementById("loading");
+    let loadingSpinner = template.content.cloneNode(true);
+    const decklistDiv = document.getElementById("decklist");
+    decklistDiv.replaceChildren(loadingSpinner);
+
     const deckcode = document.getElementById("deckcode").value;
 
     getDeckhash(deckcode)

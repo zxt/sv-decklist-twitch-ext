@@ -16,7 +16,7 @@
     width:270px;
     height:46px;
     margin-top:2px;
-    cursor:pointer;
+    cursor:default;
     opacity:1;
     background-image:url(https://shadowverse-portal.com/public/assets/image/common/global/loading.gif);
     background-repeat:no-repeat;
@@ -108,6 +108,7 @@
 }
 
 .el-card-list-link{
+    cursor:pointer;
     display:table-cell;
     padding:0 6px 0 0;
     text-align:center;
@@ -551,3 +552,41 @@ a:hover{
 }
 
 .loading-spinner-inner div { box-sizing: content-box; }
+
+/******************/
+
+#video_overlay {
+    padding-top: 3em;
+    padding-left: 3em;
+}
+
+#video_overlay div#decklist {
+    height: 450px;
+    max-height: 450px;
+    width: 800px;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+#video_overlay div#decklist::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+html#video_overlay, html#video_overlay body {
+    background-color: transparent;
+}
+
+#video_component div#decklist{
+    width: 22em;
+    height: 26em;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+#video_component div#decklist::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}

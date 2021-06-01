@@ -12,7 +12,13 @@ function configMain() {
     const deckcode = document.getElementById("deckcode").value;
 
     getDeckhash(deckcode)
-    .then(hash => getDecklist(hash))
+    .then(hash => {
+        let twitch = window.Twitch.ext;
+        twitch.configuration.set('broadcaster', '', hash);
+        twitch.send("broadcast", "application/json", hash);
+
+        return getDecklist(hash);
+    })
     .then(decklist => processDecklist(decklist, false));
 }
 

@@ -7,6 +7,8 @@ module.exports = {
         config: './src/config.js',
         live_config: './src/live_config.js',
         panel: './src/panel.js',
+        video_overlay: './src/video_overlay.js',
+        video_component: './src/video_component.js',
     },
     output: {
         filename: '[name].js',
@@ -42,6 +44,18 @@ module.exports = {
             filename: 'panel.html',
             template: 'public/panel.html',
             chunks: ['panel'],
+        }),
+        new HtmlWebpackPlugin({
+            title: 'SV Decklist - Overlay',
+            filename: 'video_overlay.html',
+            template: 'public/video_overlay.html',
+            chunks: ['video_overlay'],
+        }),
+        new HtmlWebpackPlugin({
+            title: 'SV Decklist - Component',
+            filename: 'video_component.html',
+            template: 'public/video_component.html',
+            chunks: ['video_component'],
         })
     ],
     module: {

@@ -6,7 +6,6 @@ function setupTooltips() {
     delegate("#decklist", {
         target: "a",
         arrow: false,
-        interactive: true,
         placement: "auto",
         content(reference) {
             // with event delegation, all the code below executes
@@ -41,7 +40,11 @@ function setupTooltips() {
             setupFragment("data-card-src", "img[data-card-src]", "src");
             setupFragment("data-card-name-src", "img[data-card-name-src]", "src");
 
-            return tooltip;
+            const tooltipContainer = document.createElement("div");
+            addClass(tooltipContainer, "tooltip-container");
+            tooltipContainer.appendChild(tooltip);
+
+            return tooltipContainer;
         }
     })
 }

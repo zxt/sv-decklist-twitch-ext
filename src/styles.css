@@ -554,39 +554,47 @@ a:hover{
 .loading-spinner-inner div { box-sizing: content-box; }
 
 /******************/
+html#video_overlay, html#video_overlay body {
+    background-color: transparent;
+}
 
 #video_overlay {
-    padding-top: 3em;
-    padding-left: 3em;
+    padding-top: 1em;
+    padding-left: 1em;
+    opacity: 0;
+}
+
+#video_overlay:hover {
+    opacity: 1;
+    transition: all 1s;
+    -webkit-transition: all 1s;
 }
 
 #video_overlay div#decklist {
-    height: 450px;
-    max-height: 450px;
-    width: 800px;
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    height: 32em;
 }
 
-#video_overlay div#decklist::-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
+.tooltip-container {
+    height: 22em;
 }
 
-html#video_overlay, html#video_overlay body {
+.tippy-box {
     background-color: transparent;
 }
 
 #video_component div#decklist{
     width: 22em;
     height: 26em;
+   
+}
+
+#decklist{
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-#video_component div#decklist::-webkit-scrollbar { /* WebKit */
+#decklist::-webkit-scrollbar { /* WebKit */
     width: 0;
     height: 0;
 }

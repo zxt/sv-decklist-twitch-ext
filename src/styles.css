@@ -73,6 +73,90 @@
 .en .el-card-list-rarity>i.is-rarity-4{
     background-image:url(https://shadowverse-portal.com/public/assets/image/common/en/rarity_legend.png)
 }
+.ja .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ja/rarity_bronze.png)
+}
+.ja .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ja/rarity_silver.png)
+}
+.ja .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ja/rarity_gold.png)
+}
+.ja .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ja/rarity_legend.png)
+}
+.ko .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ko/rarity_bronze.png)
+}
+.ko .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ko/rarity_silver.png)
+}
+.ko .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ko/rarity_gold.png)
+}
+.ko .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/ko/rarity_legend.png)
+}
+.zh-tw .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/zh-tw/rarity_bronze.png)
+}
+.zh-tw .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/zh-tw/rarity_silver.png)
+}
+.zh-tw .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/zh-tw/rarity_gold.png)
+}
+.zh-tw .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/zh-tw/rarity_legend.png)
+}
+.fr .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/fr/rarity_bronze.png)
+}
+.fr .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/fr/rarity_silver.png)
+}
+.fr .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/fr/rarity_gold.png)
+}
+.fr .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/fr/rarity_legend.png)
+}
+.it .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/it/rarity_bronze.png)
+}
+.it .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/it/rarity_silver.png)
+}
+.it .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/it/rarity_gold.png)
+}
+.it .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/it/rarity_legend.png)
+}
+.de .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/de/rarity_bronze.png)
+}
+.de .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/de/rarity_silver.png)
+}
+.de .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/de/rarity_gold.png)
+}
+.de .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/de/rarity_legend.png)
+}
+.es .el-card-list-rarity>i.is-rarity-1{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/es/rarity_bronze.png)
+}
+.es .el-card-list-rarity>i.is-rarity-2{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/es/rarity_silver.png)
+}
+.es .el-card-list-rarity>i.is-rarity-3{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/es/rarity_gold.png)
+}
+.es .el-card-list-rarity>i.is-rarity-4{
+    background-image:url(https://shadowverse-portal.com/public/assets/image/common/es/rarity_legend.png)
+}
 
 .el-card-list-info{
     top:0;
@@ -313,6 +397,22 @@ body,html{
 
 body.en{
     font-family:Verdana, Geneva, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+body.ja{
+    font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',Verdana,Geneva,sans-serif;
+}
+
+body.ko{
+    font-family: NanumGothic,'나눔고딕',Dotum,'돋움','Helvetica Neue',Helvetica,AppleSDGothicNeo,sans-serif;
+}
+
+body.zh-tw{
+    font-family: Arial,'Helvetica Neue',Helvetica,'黑體-繁','Heiti TC','微軟正黑','Microsoft JhengHei','Tei TC',sans-serif;
+}
+
+body.de,body.es,body.fr,body.it{
+    font-family: Verdana,Geneva,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 }
 
 li,ul{

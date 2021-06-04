@@ -7,11 +7,39 @@
     </head>
 
     <body>
+        <label for="lang-select">Set a language:</label>
+        <select name="lang" id="lang-select">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="zh-tw">繁體中文</option>
+            <option value="fr">Français</option>
+            <option value="it">Italiano</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+        </select>
+        <input type="button" id="set-lang" value="Set">
+
+        <br/>
+
+        <p>
+            Current language: <span id="current-lang">English</span>
+        </p>
+
         <label for="deckcode">Deckcode:</label>
         <input type="text" id="deckcode" name="deckcode" minlength="4" maxlength="4">
         <input type="button" id="confirm" value="Get Decklist">
 
         <div id="decklist"></div>
+
+        <template id="loading">
+            <div class="loading-spinner-outer">
+                <div class="loading-spinner-inner">
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </template>
 
         <template id="tooltip">
             <div class="bl-tooltip clearfix">

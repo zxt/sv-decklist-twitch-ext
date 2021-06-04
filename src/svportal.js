@@ -10,8 +10,8 @@ function getDeckhash(deckcode) {
     return deckhash;
 }
 
-function getDecklist(hash) {
-    const SVPORTAL_DECKHASH_URL = "shadowverse-portal.com/api/v1/deck?format=json&hash=";
+function getDecklist(hash, lang="en") {
+    const SVPORTAL_DECKHASH_URL = "shadowverse-portal.com/api/v1/deck?format=json&lang="+lang+"&hash=";
 
     let decklist = fetch(CORS_PROXY_URL + SVPORTAL_DECKHASH_URL + hash)
     .then(response => response.json())

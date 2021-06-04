@@ -13,9 +13,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     twitch.configuration.onChanged( () => {
         if(twitch.configuration.broadcaster) {
             try {
-                let hash = twitch.configuration.broadcaster.content;
+                let jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
+                let hash = jsonConfig["hash"];
 
-                getDecklist(hash)
+                let lang = jsonConfig["lang"] ? jsonConfig["lang"] : "en";
+
+                getDecklist(hash, lang)
                 .then(decklist => processDecklist(decklist));
 
             } catch (e) {

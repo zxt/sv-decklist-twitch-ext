@@ -12,7 +12,13 @@ function processDecklist(data, includeTooltips=true) {
         return seen.has(k) ? false : seen.add(k);
     });
 
-    addClass(document.body, "en");
+    const twitch = window.Twitch.ext;
+    let lang = "en";
+    if(twitch.configuration.broadcaster) {
+        const jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
+        lang = jsonConfig["lang"] ? jsonConfig["lang"] : "en";
+    }
+    addClass(document.body, lang);
 
     const ul = document.createElement("ul");
     uniqueCards.forEach(card => {
@@ -76,7 +82,7 @@ function processDecklist(data, includeTooltips=true) {
         cardTooltipLink.dataset.cardEvoSkillDisc = card.evo_skill_disc;
         cardTooltipLink.dataset.cardCharType = card.char_type;
         cardTooltipLink.dataset.cardSrc = "https://shadowverse-portal.com/image/card/phase2/common/C/C_" + card.card_id + ".png";
-        cardTooltipLink.dataset.cardNameSrc = "https://shadowverse-portal.com/image/card/phase2/en/N/N_" + card.card_id + ".png";
+        cardTooltipLink.dataset.cardNameSrc = "https://shadowverse-portal.com/image/card/phase2/" + lang + "/N/N_" + card.card_id + ".png";
         
         const cardSearchIcon = document.createElement("i");
         addClass(cardSearchIcon, "icon-search");
@@ -94,7 +100,7 @@ function processDecklist(data, includeTooltips=true) {
 
     const craft = data.deck.clan;
     const craftBannerImg = document.createElement("img");
-    craftBannerImg.src = "https://shadowverse-portal.com/public/assets/image/common/en/classes/" + craft + "/bg_list.png";
+    craftBannerImg.src = "https://shadowverse-portal.com/public/assets/image/common/" + lang + "/classes/" + craft + "/bg_list.png";
 
     const decklistDiv = document.getElementById("decklist");
     decklistDiv.replaceChildren(craftBannerImg, ul);

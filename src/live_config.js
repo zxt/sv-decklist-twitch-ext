@@ -14,10 +14,14 @@ function configMain() {
     getDeckhash(deckcode)
     .then(hash => {
         let twitch = window.Twitch.ext;
-        twitch.configuration.set('broadcaster', '', hash);
+        let jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
+        jsonConfig["hash"] = hash;
+        twitch.configuration.set('broadcaster', '', JSON.stringify(jsonConfig));
         twitch.send("broadcast", "application/json", hash);
 
-        return getDecklist(hash);
+        let lang = jsonConfig["lang"] ? jsonConfig["lang"] : "en";
+
+        return getDecklist(hash, lang);
     })
     .then(decklist => processDecklist(decklist, false));
 }

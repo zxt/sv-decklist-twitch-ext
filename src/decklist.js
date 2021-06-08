@@ -1,7 +1,10 @@
 import {addClass} from "./utils.js";
 import {setupTooltips} from "./tooltips.js";
+import {getConfig} from "./ttv_config.js";
 
 function processDecklist(data, includeTooltips=true) {
+    if(!data) return;
+
     const cards = data.deck.cards;
     let qty = {};
     cards.forEach(card => qty[card.card_id] = (qty[card.card_id] | 0) + 1);
@@ -12,12 +15,7 @@ function processDecklist(data, includeTooltips=true) {
         return seen.has(k) ? false : seen.add(k);
     });
 
-    const twitch = window.Twitch.ext;
-    let lang = "en";
-    if(twitch.configuration.broadcaster) {
-        const jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
-        lang = jsonConfig["lang"] ? jsonConfig["lang"] : "en";
-    }
+    let lang = getConfig("lang", "en");
     addClass(document.body, lang);
 
     const ul = document.createElement("ul");
@@ -114,4 +112,9 @@ function processDecklist(data, includeTooltips=true) {
     }
 }
 
-export {processDecklist};
+function clearDecklist() {
+    const decklistDiv = document.getElementById("decklist");
+    decklistDiv.replaceChildren();
+}
+
+export {processDecklist, clearDecklist};

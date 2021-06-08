@@ -1,9 +1,10 @@
 import {getDeckhash, getDecklist} from "./svportal.js";
 import {processDecklist} from "./decklist.js";
+import {saveConfig, getConfig} from "./ttv_config.js";
 
 import "./styles.css";
 
-function configMain() {
+function getDeck() {
     const template = document.getElementById("loading");
     let loadingSpinner = template.content.cloneNode(true);
     const decklistDiv = document.getElementById("decklist");
@@ -13,13 +14,9 @@ function configMain() {
 
     getDeckhash(deckcode)
     .then(hash => {
-        let twitch = window.Twitch.ext;
-        let jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
-        jsonConfig["hash"] = hash;
-        twitch.configuration.set('broadcaster', '', JSON.stringify(jsonConfig));
-        twitch.send("broadcast", "application/json", hash);
+        let lang = getConfig("lang", "en");
 
-        let lang = jsonConfig["lang"] ? jsonConfig["lang"] : "en";
+        saveConfig("hash", hash);
 
         return getDecklist(hash, lang);
     })
@@ -27,6 +24,6 @@ function configMain() {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    const el = document.getElementById("confirm");
-    el.addEventListener("click", configMain, false);
+    const el = document.getElementById("getdeck");
+    el.addEventListener("click", getDeck, false);
 })

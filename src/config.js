@@ -1,11 +1,10 @@
 import {getDeckhash, getDecklist} from "./svportal.js";
-import {processDecklist} from "./decklist.js";
+import {processDecklist, clearDecklist} from "./decklist.js";
+import {saveConfig, getConfig, clearConfig} from "./ttv_config.js";
 
 import "./styles.css";
 
-const twitch = window.Twitch.ext;
-
-function configMain() {
+function getDeck() {
     const template = document.getElementById("loading");
     let loadingSpinner = template.content.cloneNode(true);
     const decklistDiv = document.getElementById("decklist");
@@ -13,14 +12,14 @@ function configMain() {
 
     const deckcode = document.getElementById("deckcode").value;
 
-    let lang = "en";
-    if(twitch.configuration.broadcaster) {
-        const jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
-        lang = jsonConfig["lang"] ? jsonConfig["lang"] : "en";
-    }
-
     getDeckhash(deckcode)
-    .then(hash => getDecklist(hash, lang))
+    .then(hash => {
+        let lang = getConfig("lang", "en");
+
+        saveConfig("hash", hash);
+
+        return getDecklist(hash, lang);
+    })
     .then(decklist => processDecklist(decklist));
 }
 
@@ -33,23 +32,29 @@ function setLang() {
     const s = document.getElementById("current-lang");
     s.textContent = langText;
 
-    if(twitch.configuration.broadcaster) {
-        let jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
-        jsonConfig["lang"] = langCode;
-        twitch.configuration.set('broadcaster', '', JSON.stringify(jsonConfig));
-    }
+    saveConfig("lang", langCode, false);
+}
+
+function clear() {
+    clearDecklist();
+    clearConfig("hash");
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    const el = document.getElementById("confirm");
-    el.addEventListener("click", configMain, false);
+    const el = document.getElementById("getdeck");
+    el.addEventListener("click", getDeck, false);
+
+    const cl = document.getElementById("clear");
+    cl.addEventListener("click", clear, false);
 
     const la = document.getElementById("set-lang");
     la.addEventListener("click", setLang, false);
 
+    const twitch = window.Twitch.ext;
     twitch.configuration.onChanged( () => {
         if(twitch.configuration.broadcaster) {
             let jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
+            let lang = "en";
             if(jsonConfig["lang"]) {
                 const langs = {"en": "English", "ja": "日本語", "ko": "한국어", "zh-tw": "繁體中文", 
                                 "fr": "Français", "it": "Italiano", "de": "Deutsch", "es": "Español"};
@@ -58,6 +63,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 s.textContent = langs[jsonConfig["lang"]];
 
                 document.querySelector('#lang-select [value="' + jsonConfig['lang'] + '"]').selected = true;
+                lang = jsonConfig["lang"];
+            }
+
+            let hash = getConfig("hash", "");
+            if(hash) {
+                getDecklist(hash, lang)
+                .then(decklist => processDecklist(decklist));
             }
         }
     });

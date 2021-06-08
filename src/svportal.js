@@ -11,6 +11,8 @@ function getDeckhash(deckcode) {
 }
 
 function getDecklist(hash, lang="en") {
+    if(!hash) return;
+
     const SVPORTAL_DECKHASH_URL = "shadowverse-portal.com/api/v1/deck?format=json&lang="+lang+"&hash=";
 
     let decklist = fetch(CORS_PROXY_URL + SVPORTAL_DECKHASH_URL + hash)

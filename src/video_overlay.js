@@ -1,5 +1,6 @@
 import {getDecklist} from "./svportal.js";
 import {processDecklist} from "./decklist.js";
+import {getConfig} from "./ttv_config.js";
 
 import "./styles.css";
 
@@ -13,10 +14,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     twitch.configuration.onChanged( () => {
         if(twitch.configuration.broadcaster) {
             try {
-                let jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
-                let hash = jsonConfig["hash"];
-
-                let lang = jsonConfig["lang"] ? jsonConfig["lang"] : "en";
+                let hash = getConfig("hash", "");
+                let lang = getConfig("lang", "en");
 
                 getDecklist(hash, lang)
                 .then(decklist => processDecklist(decklist));
@@ -30,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })
 
     twitch.listen("broadcast", ( (target, contentType, message) => {
-        getDecklist(message)
+        let lang = getConfig("lang", "en");
+
+        getDecklist(message, lang)
         .then(decklist => processDecklist(decklist));
     }));
 })

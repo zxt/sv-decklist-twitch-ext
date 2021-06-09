@@ -10,7 +10,8 @@ function setupTooltips() {
         content(reference) {
             // with event delegation, all the code below executes
             // on the parent first, which is not wanted
-            if(reference.id == "decklist") {
+            // also skip the links to svPortal, which aren't card links so no tooltip needed
+            if(reference.id == "decklist" || reference.classList.contains("svPortalLink")) {
                 return;
             }
 

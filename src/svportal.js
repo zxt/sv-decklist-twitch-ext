@@ -5,7 +5,13 @@ function getDeckhash(deckcode) {
 
     let deckhash = fetch(CORS_PROXY_URL + SVPORTAL_DECKCODE_URL + deckcode)
     .then(response => response.json())
-    .then(jsonData => jsonData.data.hash)
+    .then(jsonData => {
+        if(jsonData.data.errors[0]) {
+            throw new Error(jsonData.data.errors[0].message);
+        }
+
+        return jsonData.data.hash;
+    })
 
     return deckhash;
 }

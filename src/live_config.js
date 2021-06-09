@@ -11,6 +11,7 @@ function getDeck() {
     decklistDiv.replaceChildren(loadingSpinner);
 
     const deckcode = document.getElementById("deckcode").value;
+    const dcError = document.getElementById("deckcode-error");
 
     getDeckhash(deckcode)
     .then(hash => {
@@ -18,7 +19,13 @@ function getDeck() {
 
         saveConfig("hash", hash);
 
+        decklistDiv.dataset.hash = hash;
+        dcError.textContent = "";
+
         return getDecklist(hash, lang);
+    }, errorMsg => {
+        dcError.textContent = errorMsg;
+        decklistDiv.replaceChildren();
     })
     .then(decklist => processDecklist(decklist, false));
 }

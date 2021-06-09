@@ -6,6 +6,7 @@ import "./styles.css";
 
 document.addEventListener("DOMContentLoaded", function(event) {
     const twitch = window.Twitch.ext;
+    const decklistDiv = document.getElementById("decklist");
 
     twitch.onAuthorized( auth => {
         //
@@ -16,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             try {
                 let hash = getConfig("hash", "");
                 let lang = getConfig("lang", "en");
+
+                decklistDiv.dataset.hash = hash;
 
                 getDecklist(hash, lang)
                 .then(decklist => processDecklist(decklist, false));
@@ -30,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     twitch.listen("broadcast", ( (target, contentType, message) => {
         let lang = getConfig("lang", "en");
+        decklistDiv.dataset.hash = message;
 
         getDecklist(message, lang)
         .then(decklist => processDecklist(decklist, false));

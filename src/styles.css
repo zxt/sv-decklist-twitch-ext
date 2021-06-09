@@ -698,3 +698,13 @@ html#video_overlay, html#video_overlay body {
     width: 0;
     height: 0;
 }
+
+/******************/
+
+#deckcode-error {
+    color: red;
+}
+
+.svPortalLink {
+    display: block;
+}

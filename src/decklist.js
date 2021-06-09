@@ -68,7 +68,7 @@ function processDecklist(data, includeTooltips=true) {
         const cardTooltipLink = document.createElement("a");
         addClass(cardTooltipLink, "el-icon-search");
         addClass(cardTooltipLink, "is-small");
-        cardTooltipLink.href = "https://shadowverse-portal.com/card/" + card.card_id;
+        cardTooltipLink.href = "https://shadowverse-portal.com/card/" + card.card_id + "?lang=" + lang;
         cardTooltipLink.target = "_blank";
         cardTooltipLink.dataset.cardTribeName = card.tribe_name;
         cardTooltipLink.dataset.cardAtk = card.atk;
@@ -101,7 +101,15 @@ function processDecklist(data, includeTooltips=true) {
     craftBannerImg.src = "https://shadowverse-portal.com/public/assets/image/common/" + lang + "/classes/" + craft + "/bg_list.png";
 
     const decklistDiv = document.getElementById("decklist");
-    decklistDiv.replaceChildren(craftBannerImg, ul);
+
+    const svPortalLink = document.createElement("a");
+    svPortalLink.classList.add("svPortalLink");
+    svPortalLink.href = "https://shadowverse-portal.com/deck/" + decklistDiv.dataset.hash + "?lang=" + lang;
+    svPortalLink.target = "_blank";
+    svPortalLink.text = "See this deck in SV-Portal";
+    const svPortalLink2 = svPortalLink.cloneNode(true);
+
+    decklistDiv.replaceChildren(svPortalLink, craftBannerImg, ul, svPortalLink2);
 
     if(includeTooltips) {
         setupTooltips();

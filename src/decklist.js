@@ -51,6 +51,7 @@ function processDecklist(data, includeTooltips=true) {
         const cardNameSpan = document.createElement("span");
         addClass(cardNameSpan, "el-card-list-info-name-text");
         cardNameSpan.innerHTML = card.card_name;
+        cardNameSpan.title = card.card_name;
         cardName.appendChild(cardNameSpan);
 
         const cardQty = document.createElement("p");

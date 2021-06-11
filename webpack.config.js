@@ -9,6 +9,7 @@ module.exports = {
         panel: './src/panel.js',
         video_overlay: './src/video_overlay.js',
         video_component: './src/video_component.js',
+        mobile: './src/mobile.js',
     },
     output: {
         filename: '[name].js',
@@ -56,6 +57,12 @@ module.exports = {
             filename: 'video_component.html',
             template: 'public/video_component.html',
             chunks: ['video_component'],
+        }),
+        new HtmlWebpackPlugin({
+            title: 'SV Decklist - Mobile',
+            filename: 'mobile.html',
+            template: 'public/mobile.html',
+            chunks: ['mobile'],
         })
     ],
     module: {

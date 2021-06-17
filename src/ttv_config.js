@@ -10,11 +10,9 @@ if(twitch) {
 
 function saveConfig(setting, value, bcast=true) {
     jsonConfig[setting] = value;
-    if(twitch.configuration.broadcaster) {
-        twitch.configuration.set("broadcaster", '', JSON.stringify(jsonConfig));
-        if(bcast) {
-            broadcast(value);
-        }
+    twitch.configuration.set("broadcaster", '', JSON.stringify(jsonConfig));
+    if(bcast) {
+        broadcast(value);
     }
 }
 

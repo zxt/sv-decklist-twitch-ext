@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/index.js',
         config: './src/config.js',
         live_config: './src/live_config.js',
         panel: './src/panel.js',
@@ -23,11 +22,6 @@ module.exports = {
         contentBase: './dist',
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: 'SV Decklist Test',
-            template: 'public/index.html',
-            chunks: ['index'],
-        }),
         new HtmlWebpackPlugin({
             title: 'SV Decklist - Config',
             filename: 'config.html',

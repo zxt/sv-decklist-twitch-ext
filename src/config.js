@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     la.addEventListener("click", setLang, false);
 
     const twitch = window.Twitch.ext;
+    const decklistDiv = document.getElementById("decklist");
     twitch.configuration.onChanged( () => {
         if(twitch.configuration.broadcaster) {
             let jsonConfig = JSON.parse(twitch.configuration.broadcaster.content);
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
 
             let hash = getConfig("hash", "");
+            decklistDiv.dataset.hash = hash;
             if(hash) {
                 getDecklist(hash, lang)
                 .then(decklist => processDecklist(decklist));

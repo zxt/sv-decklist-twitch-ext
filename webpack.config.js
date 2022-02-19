@@ -19,7 +19,10 @@ module.exports = {
         minimize: false,
     },
     devServer: {
-        contentBase: './dist',
+        static: {
+            directory: './dist',
+        },
+        port: 8080
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,4 +1,4 @@
-const CORS_PROXY_URL = "https://secure-brook-72787.herokuapp.com/";
+const CORS_PROXY_URL = "https://secure-brook-72787.fly.dev/";
 
 function getDeckhash(deckcode) {
     const SVPORTAL_DECKCODE_URL = "shadowverse-portal.com/api/v1/deck/import?format=json&deck_code=";
